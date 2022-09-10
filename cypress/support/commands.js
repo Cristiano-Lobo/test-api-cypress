@@ -23,3 +23,30 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('getAllperson', function () {
+    cy.request(
+        'GET',
+        'http://api-person-test.herokuapp.com/person'
+    ).then(function (response) {
+        expect(response.status).to.eq(200)
+        return response.body
+    })
+})
+
+Cypress.Commands.add('createPerson', function (user) {
+    cy.request({
+        method: 'POST',
+        url: 'http://api-person-test.herokuapp.com/person',
+        body: user,
+        headers:{
+            'Content-Type': 'application/json'
+        }
+}).then(function (response) {
+        expect(response.status).to.eq(201)
+        return response.body
+    })
+})
+
+
+
