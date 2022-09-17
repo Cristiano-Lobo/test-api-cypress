@@ -25,10 +25,11 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('getAllperson', function () {
-    cy.request(
-        'GET',
-        'http://api-person-test.herokuapp.com/person'
-    ).then(function (response) {
+    cy.request({
+       method:'GET',
+       url: 'http://api-person-test.herokuapp.com/person'
+    }).then(function (response) {
+        //cy.log(JSON.stringify(response.body))
         expect(response.status).to.eq(200)
         return response.body
     })
