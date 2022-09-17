@@ -24,12 +24,22 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+//const { expect } = require("chai")
+
+
 Cypress.Commands.add('getAllperson', function () {
     cy.request({
        method:'GET',
        url: 'http://api-person-test.herokuapp.com/person'
     }).then(function (response) {
-        //cy.log(JSON.stringify(response.body))
+        cy.log(JSON.stringify(response.body))
+        //expect(response.body.quantidade).to.eq(2)
+        //expect(response.body.produtos.length).to.be.eq(2);
+        // expect(response.body.produtos[0]).to.have.all.keys(
+        //     'nome', 'preco', 'descricao', 'quantidade', '_id'
+        //   )
+        //expect(response.body[0].nome).to.not.be.null
+        
         expect(response.status).to.eq(200)
         return response.body
     })
