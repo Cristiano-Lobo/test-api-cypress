@@ -1,7 +1,7 @@
 
-describe('Obter um único usuário', () => {
-    context('it provides a way to keep tests easier to read and organized.', () => {
-      it('This is your test case', () => {
+describe('Obtendo uma única pessoa', () => {
+    context('Obtendo uma única pessoa', () => {
+      it('Obter uma única pessoa com sucesso', () => {
         cy.request({
           method: 'GET',
           url: '/person',

@@ -8,6 +8,11 @@ module.exports = defineConfig({
       return require('./cypress/support/tasks/index.js')(on, config)
     },
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
-    baseUrl: "http://api-person-test.herokuapp.com"
+    video: false,
+    baseUrl: "http://api-person-test.herokuapp.com",
+    reporter: 'reporters/reporter-config.js',
+    reporter: 'mochawesome'
   },
+  
+  
 });

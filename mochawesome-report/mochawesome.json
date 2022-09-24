@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-09-24T09:50:10.633Z",
+    "end": "2022-09-24T09:50:11.414Z",
+    "duration": 781,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "734bd4ab-abe6-49a0-b404-cbb21497de22",
+      "title": "",
+      "fullFile": "cypress/e2e/person/PUTPerson.spec.js",
+      "file": "cypress/e2e/person/PUTPerson.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "07a4e341-cd9a-43f1-8ac0-b1a873423374",
+          "title": "atualizar uma pessoa",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "atualizar uma pessoa com sucesso",
+              "fullTitle": "atualizar uma pessoa atualizar uma pessoa com sucesso",
+              "timedOut": null,
+              "duration": 553,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'PUT',\n  url: '/person/63298ab7860f5775756495f7',\n  body: {\n    firstName: \"CRISTIANO ATUALIZADO\",\n    lastName: \"LOBO\",\n    occupation: \"QA\",\n    gender: \"F\",\n    dateOfBirth: \"1988-08-28T00:00:00.000Z\"\n  }\n}).should(response => {\n  expect(response.status).eq(201);\n  expect(response.body.message).eq(\"Pessoa inserida no sistema com sucesso!\");\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttp://api-person-test.herokuapp.com/person/63298ab7860f5775756495f7\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: http://api-person-test.herokuapp.com/person/63298ab7860f5775756495f7\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/10.8.0 Chrome/102.0.5005.148 Electron/19.0.8 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 126\n}\nBody: {\"firstName\":\"CRISTIANO ATUALIZADO\",\"lastName\":\"LOBO\",\"occupation\":\"QA\",\"gender\":\"F\",\"dateOfBirth\":\"1988-08-28T00:00:00.000Z\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"server\": \"Cowboy\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"content-security-policy\": \"default-src 'none'\",\n  \"x-content-type-options\": \"nosniff\",\n  \"content-type\": \"text/html; charset=utf-8\",\n  \"content-length\": \"170\",\n  \"date\": \"Sat, 24 Sep 2022 09:50:10 GMT\",\n  \"via\": \"1.1 vegur\"\n}\nBody: <!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot PUT /person/63298ab7860f5775756495f7</pre>\n</body>\n</html>\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttp://api-person-test.herokuapp.com/person/63298ab7860f5775756495f7\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: http://api-person-test.herokuapp.com/person/63298ab7860f5775756495f7\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/10.8.0 Chrome/102.0.5005.148 Electron/19.0.8 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 126\n}\nBody: {\"firstName\":\"CRISTIANO ATUALIZADO\",\"lastName\":\"LOBO\",\"occupation\":\"QA\",\"gender\":\"F\",\"dateOfBirth\":\"1988-08-28T00:00:00.000Z\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"server\": \"Cowboy\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"Express\",\n  \"content-security-policy\": \"default-src 'none'\",\n  \"x-content-type-options\": \"nosniff\",\n  \"content-type\": \"text/html; charset=utf-8\",\n  \"content-length\": \"170\",\n  \"date\": \"Sat, 24 Sep 2022 09:50:10 GMT\",\n  \"via\": \"1.1 vegur\"\n}\nBody: <!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot PUT /person/63298ab7860f5775756495f7</pre>\n</body>\n</html>\n\nhttps://on.cypress.io/request\n    at <unknown> (http://api-person-test.herokuapp.com/__cypress/runner/cypress_runner.js:143968:80)\n    at tryCatcher (http://api-person-test.herokuapp.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://api-person-test.herokuapp.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://api-person-test.herokuapp.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://api-person-test.herokuapp.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://api-person-test.herokuapp.com/__cypress/runner/cypress_runner.js:9435:18)\n    at _drainQueueStep (http://api-person-test.herokuapp.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://api-person-test.herokuapp.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://api-person-test.herokuapp.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://api-person-test.herokuapp.com/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/person/PUTPerson.spec.js:4:15)",
+                "diff": null
+              },
+              "uuid": "4c89a216-093b-4ef9-8960-ee4c9edcdf03",
+              "parentUUID": "07a4e341-cd9a-43f1-8ac0-b1a873423374",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4c89a216-093b-4ef9-8960-ee4c9edcdf03"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 553,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
