@@ -1,8 +1,7 @@
 /// <reference types="cypress"/> //facilita no autocomplete
 const payloadAddPerson = require('../payloads/add-person.json')
 
-
-function allPerson(){
+function addPerson(){
     return cy.request({
         method: 'POST',
         url:'/person',
