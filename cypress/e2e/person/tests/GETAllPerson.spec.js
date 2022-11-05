@@ -14,7 +14,7 @@ describe('get all person api', function (){
              'lastName', 'occupation', 'gender',
               'dateOfBirth','__v' )
              expect(response.status).to.eq(200)
-             expect(response.body[0].firstName).to.eq("Samanta")
+             //expect(response.body[0].firstName).to.eq("Samanta")
              //cy.log(JSON.stringify(response.body))
             //expect(response.body.quantidade).to.eq(2)
              //expect(response.body.produtos.length).to.be.eq(2);
