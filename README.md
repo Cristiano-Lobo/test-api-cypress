@@ -45,6 +45,8 @@ yarn cypress run
 
 Camada na pirâmide de testes:
 
+- Service
+
 ![](layer_test.jpg)
 
 ```
