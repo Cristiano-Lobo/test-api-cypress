@@ -29,14 +29,12 @@ yarn install
 yarn add cypress --dev
 ```
 
-## Para abrir o Cypress com npm ou yarn
-
+Para abrir o Cypress com npm ou yarn
 ```
 npx cypress open
 
 ou
 
 yarn cypress open
-
 ```
 
