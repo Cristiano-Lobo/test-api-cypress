@@ -44,7 +44,7 @@ yarn cypress run
 ```
 
 Camada na piramide de testes:
-```
+
 ![](layer_test.jpg)
 
 ```
