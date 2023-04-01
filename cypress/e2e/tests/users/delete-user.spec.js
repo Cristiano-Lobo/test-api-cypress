@@ -1,26 +1,20 @@
 /// <reference types="cypress" />
+//CÓDIGO EM REFATORAÇÃO
 
 let fakeUser;
 
-describe('Create Users api', () => {
+describe('Delete user api', () => {
 
-    beforeEach(() => {
-        cy.task('freshUser').then((user) => {
-          fakeUser = user;
-          cy.log(JSON.stringify(fakeUser))
-        });
-      });
-    
-    context('When I send POST /usuarios', () => {
-      it('Then it should create a new user', () => {
+    context('When I delete DEL /usuario', () => {
+      it('Then it should delete a user', () => {
         cy.request({
-          method: 'POST',
+          method: 'DELETE',
           url: 'usuarios',
           body: fakeUser
         })
           .should((response) => {
             expect(response.status).eq(201)
-            expect(response.body.message).eq("Cadastro realizado com sucesso")
+            expect(response.body.message).eq("Registro excluído com sucesso")
           });
       });
     });
