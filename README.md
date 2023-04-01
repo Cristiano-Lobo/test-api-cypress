@@ -43,7 +43,7 @@ ou
 yarn cypress run 
 ```
 
-Camada na piramide de testes:
+Camada na pirâmide de testes:
 
 ![](layer_test.jpg)
 
