@@ -42,3 +42,9 @@ npx cypress run
 ou
 yarn cypress run 
 ```
+
+Camada na piramide de testes:
+```
+![](layer_test.jpg)
+
+```
