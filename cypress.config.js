@@ -9,7 +9,7 @@ module.exports = defineConfig({
     },
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     video: false,
-    baseUrl: "http://api-person-test.herokuapp.com",
+    baseUrl: "https://serverest.dev/",
     reporter: 'reporters/reporter-config.js',
     reporter: 'mochawesome'
   },
