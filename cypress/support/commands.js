@@ -1,3 +1,5 @@
+const faker = require("faker")
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -7,7 +9,7 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
+//let fakeUser;
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
@@ -27,37 +29,37 @@
 //const { expect } = require("chai")
 
 
-Cypress.Commands.add('getAllperson', function () {
+Cypress.Commands.add('getUsers', function () {
     cy.request({
-       method:'GET',
-       url: 'http://api-person-test.herokuapp.com/person'
-    }).then(function (response) {
-        cy.log(JSON.stringify(response.body))
-        //expect(response.body.quantidade).to.eq(2)
-        //expect(response.body.produtos.length).to.be.eq(2);
-        // expect(response.body.produtos[0]).to.have.all.keys(
-        //     'nome', 'preco', 'descricao', 'quantidade', '_id'
-        //   )
-        //expect(response.body[0].nome).to.not.be.null
-        
-        expect(response.status).to.eq(200)
-        return response.body
+        method: 'GET',
+        url: 'usuarios'
     })
 })
 
-Cypress.Commands.add('createPerson', function (user) {
+Cypress.Commands.add('createUser', function () {
     cy.request({
         method: 'POST',
-        url: 'http://api-person-test.herokuapp.com/person',
-        body: user,
-        headers:{
-            'Content-Type': 'application/json'
+        url: 'usuarios',
+        body: {
+            nome: faker.name.firstName(),
+            email: faker.internet.email(),
+            password: faker.internet.password(),
+            administrador: "true"
         }
-}).then(function (response) {
-        expect(response.status).to.eq(201)
-        return response.body
+    })
+
+    Cypress.Commands.add('updateUser', function () {
+        cy.request({
+            method: 'PUT',
+            url: 'usuarios/${}',
+            body: {
+                nome: faker.name.firstName(),
+                email: faker.internet.email(),
+                password: faker.internet.password(),
+                administrador: "true"
+            }
+        })
     })
 })
-
 
 

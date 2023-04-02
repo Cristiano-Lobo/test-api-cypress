@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-//CÓDIGO EM REFATORAÇÃO
+const user = require('../../../fixtures/user.json')
 let fakeUser;
 
 describe('Update User api', () => {
@@ -17,7 +17,7 @@ describe('Update User api', () => {
           url: 'usuarios/0uxuPY0cbmQhpEz1',
           body: fakeUser
         })
-          .should((response) => {
+          .then((response) => {
             expect(response.status).eq(200)
             expect(response.body.message).eq("Registro alterado com sucesso")
           });

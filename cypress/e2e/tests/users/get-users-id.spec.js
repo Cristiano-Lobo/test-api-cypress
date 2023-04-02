@@ -15,9 +15,7 @@ describe('Request usuários', () => {
                     cy.log(JSON.stringify(response.body))
                     expect(response.status).to.eq(200)
                     expect(response.body.usuarios[0].email).to.not.be.null
-                    expect(response.body.usuarios[0]).to.have.all.keys(
-                        'nome', 'email', 'password', 'administrador', '_id')
-
+                    expect(response.body.usuarios[0]).to.have.all.keys('nome', 'email', 'password', 'administrador', '_id')
                 })
         })
     })

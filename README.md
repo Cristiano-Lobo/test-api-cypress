@@ -8,6 +8,14 @@
 - [Cypress] - framework de testes automatizados da Microsoft. Versão: 12.9.0
 - [Javascript] - linguagem de programação
 
+## ⚙️ API
+
+- https://serverest.dev/#/
+
+## ∞ CI/CD
+
+- Github Actions
+
 ## 👨🏻‍💻 Como executar o projeto
 
 [Node.js](https://nodejs.org/) v16 ou superior para executar.
