@@ -5,7 +5,7 @@
 ## 🚀 Tecnologias
 
 - [Node.js] - plataforma de desenvolvimento
-- [Cypress] - framework de testes automatizados da Microsoft. Versão: 12.9.0
+- [Cypress] - framework de testes automatizados e2e e API's
 - [Javascript] - linguagem de programação
 
 ## ⚙️ API
